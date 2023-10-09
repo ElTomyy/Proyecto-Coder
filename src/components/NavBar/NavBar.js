@@ -5,7 +5,7 @@ import SearchBar from "../SearchBar/SearchBar"
 import searchImage from "../API/API"
 import { Link } from "react-router-dom"
 
-function NavBar({GetCards, GetCardsNav}) {
+function NavBar({GetCards}) {
 
     const handleSubmit = async (search) => {
         let resultado = await searchImage(search)
@@ -15,22 +15,22 @@ function NavBar({GetCards, GetCardsNav}) {
 
     const handleClickConsolas = async () => {
         let resultado = await searchImage("Consolas")
-        GetCardsNav(resultado)
+        GetCards(resultado)
     }
 
     const handleClickComponentes = async () => {
         let resultado = await searchImage("Componentes")
-        GetCardsNav(resultado)
+        GetCards(resultado)
     }
 
     const handleClickJuegos  = async () => {
         let resultado = await searchImage("Juegos")
-        GetCardsNav(resultado)
+        GetCards(resultado)
     }
 
     const handleClickAccesorios = async () => {
         let resultado = await searchImage("Accesorios")
-        GetCardsNav(resultado)
+        GetCards(resultado)
     }
 
     return (
@@ -48,7 +48,7 @@ function NavBar({GetCards, GetCardsNav}) {
 
                         <Link value="Juegos" onClick={handleClickJuegos} className="navbar-item" to="/Juegos">Juegos</Link>
 
-                        <Link value="Accesorios" onClick={handleClickAccesorios} className="navbar-item" to="/Acessorios">Accesorios</Link>
+                        <Link value="Accesorios" onClick={handleClickAccesorios} className="navbar-item" to="/Accesorios">Accesorios</Link>
 
                     </div>
 
