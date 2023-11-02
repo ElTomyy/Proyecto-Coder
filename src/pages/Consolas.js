@@ -1,10 +1,14 @@
+import { useParams } from "react-router-dom"
 import ItemCards from "../components/ItemCards/ItemCards"
 
-function Consolas ( {images} ) {
+
+function Consolas ( {doc} ) {
+
+    const params = useParams()
 
     return (
         <div>
-            <ItemCards images={images}/>
+            <ItemCards doc={doc}/>
         </div>
     )
 

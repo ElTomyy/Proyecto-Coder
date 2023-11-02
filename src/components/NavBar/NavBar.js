@@ -1,35 +1,50 @@
 import "bulma/css/bulma.css"
 import LogoPlay from "../../images/logo-play.png"
-import CartWidget from "../CartWidget/CartWidget"
+import LogoCarrito from "../../images/logo-carrito.png"
 import SearchBar from "../SearchBar/SearchBar"
-import searchImage from "../API/API"
+import { getItemList } from "../API/API"
 import { Link } from "react-router-dom"
+import { useEffect } from "react"
 
-function NavBar({GetCards}) {
+function NavBar({ GetCards }) {
+
+    useEffect(async () => {
+        let resultado = await getItemList("")
+        GetCards(resultado)
+    }, [])
 
     const handleSubmit = async (search) => {
-        let resultado = await searchImage(search)
+        if (search != "" || search != "Consolas" || search != "Componentes" || search != "Juegos" || search != "Accesorios") {
+            let resultado = await getItemList(search)
+            GetCards(resultado)
+        }
+        else{
+            console.log("Devolver error")
+        }
+    }
+
+    const handleClickAll = async () => {
+        let resultado = await getItemList("")
         GetCards(resultado)
     }
 
-
     const handleClickConsolas = async () => {
-        let resultado = await searchImage("Consolas")
+        let resultado = await getItemList("Consolas")
         GetCards(resultado)
     }
 
     const handleClickComponentes = async () => {
-        let resultado = await searchImage("Componentes")
+        let resultado = await getItemList("Componentes")
         GetCards(resultado)
     }
 
-    const handleClickJuegos  = async () => {
-        let resultado = await searchImage("Juegos")
+    const handleClickJuegos = async () => {
+        let resultado = await getItemList("Juegos")
         GetCards(resultado)
     }
 
     const handleClickAccesorios = async () => {
-        let resultado = await searchImage("Accesorios")
+        let resultado = await getItemList("Accesorios")
         GetCards(resultado)
     }
 
@@ -37,7 +52,7 @@ function NavBar({GetCards}) {
         <div className="box">
             <nav className="navbar">
                 <div className="navbar-brand">
-                    <a className="navbar-item" href=""><Link to="/"><img src={LogoPlay} alt="logo playstation"></img><strong className="block pdl-10">Easy Gaming</strong></Link></a>
+                    <Link className="navbar-item" to="/" onClick={handleClickAll}><img src={LogoPlay} alt="logo playstation"></img><strong className="block pdl-10">Easy Gaming</strong></Link>
                 </div>
                 <div className="navbar-menu">
                     <div className="navbar-start">
@@ -53,10 +68,10 @@ function NavBar({GetCards}) {
                     </div>
 
                     <div className="navbar-end">
-                        <SearchBar enSubmit={handleSubmit}/>
-                        <CartWidget/>
+                        <SearchBar enSubmit={handleSubmit} />
+                        <Link to="/Carrito" className="navbar-item"><img src={LogoCarrito} alt="logo carrito"></img></Link>
                     </div>
-                    
+
 
                 </div>
             </nav>

@@ -1,10 +1,10 @@
 import ItemCards from "../components/ItemCards/ItemCards"
 
-function Componentes ( {images} ) {
+function Componentes ( {doc} ) {
 
     return (
         <div>
-            <ItemCards images={images}/>
+            <ItemCards doc={doc}/>
         </div>
     )
 

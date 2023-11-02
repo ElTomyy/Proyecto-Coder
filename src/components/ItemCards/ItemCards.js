@@ -1,12 +1,12 @@
 import ShowCards from "../ShowCards/ShowCards"
 
-function ItemCards ({images}) {
+function ItemCards ( {doc} ) {
 
-    const RenderImages = images.map((e) => {
-        return <ShowCards images={e}/>
+    const RenderImages = doc.map((e) => {
+        return <ShowCards doc={e} />
     })
 
-    return <div>{RenderImages}</div>
+    return <div className="div-container">{RenderImages}</div>
 }
 
 export default ItemCards

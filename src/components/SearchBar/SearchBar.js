@@ -18,7 +18,7 @@ function SearchBar({ enSubmit }) {
     return (
         <div className="navbar-item">
             <form onSubmit={handleFormSubmit}>
-                <input value={search} className="navabr-item input" placeholder="Search" onChange={handleChange} />
+                <input className="navabr-item input" placeholder="Search" onChange={handleChange} />
             </form>
         </div>
     )

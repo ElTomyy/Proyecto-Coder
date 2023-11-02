@@ -1,3 +1,11 @@
+h1{
+    text-align: center;
+}
+
+h2{
+    height: min-content;
+}
+
 .pdl-10 {
     padding-left: 10px;
 }
@@ -6,7 +14,121 @@
     padding-right: 10px;
 }
 
+.pdt-10{
+    padding-top: 10px;
+}
+
+.pdb-25{
+    padding-bottom: 25px;
+}
+
 .text-align{
     text-align: center;
 }
 
+.display-flex{
+    display: flex;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.div-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+}
+
+.div-container .div-modify{
+    display: inline;
+    height: min-content;
+    width: max-content;
+}
+
+.div-product .div-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.div-product .div-grid{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+} 
+
+.div-grid .product-image{
+    max-width: 500px;
+    max-width: 250px;
+}
+
+.div-grid .product-info{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    column-gap: 100px;
+    align-items: center;
+}
+
+.product-info .div-product-info{
+    height: 100%;
+    text-align: center;
+}
+
+.div-stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-volver .button-volver{
+    background-color: gray;
+}
+
+.div-cart {
+    display: grid;
+    column-gap: 10%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+}
+
+.div-cart .div-cart-list{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.div-cart .div-cart-list-data{
+    justify-self: center;
+}
+
+.div-cart .div-cart-list .div-cart-item{
+    display: flex;
+    width: 100%;
+    min-height: 190px;
+}
+
+.div-cart .div-cart-list .div-cart-item .div-cart-data{
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+}
+
+.max-img-cart{
+    width: 150px;
+    max-height: 150px;
+    height: 100%;
+    border-radius: 10%;
+    object-fit: contain;
+}
+
+.max-size{
+    width: 350px;
+    height: 250px;
+    object-fit: contain;
+}

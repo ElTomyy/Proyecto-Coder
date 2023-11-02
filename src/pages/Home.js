@@ -1,9 +1,9 @@
 import ItemCards from "../components/ItemCards/ItemCards"
 
-function Home( {images} ) {
+function Home( {doc} ) {
 
-    return (
-        <ItemCards images={images}/>
+    return(
+        <ItemCards doc={doc}/>
     )
 
 }
